@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+html,
+body,
+.body,
+.container,
+#root,
+#body {
+  height: 100%;
+  font-family: 'Finster';
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Finster';
+  src: local('Finster'), url(./assets/Finster.ttf) format('truetype');
 }
