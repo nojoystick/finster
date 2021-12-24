@@ -2,10 +2,12 @@ import Colors from '../assets/colors';
 import { makeStyles } from '@material-ui/core';
 import * as Routes from '../constants/routes';
 import { Link } from 'react-router-dom';
+import { StartClouds } from '../components';
 
 const useStyles = makeStyles({
   main: {
-    padding: '0px 150px',
+    padding: (props) => (props.isMobile ? '30px 30px' : '50px 150px'),
+    marginTop: '40px',
     height: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -28,16 +30,18 @@ const useStyles = makeStyles({
     color: '#000',
   },
   title: {
-    fontSize: '96pt',
+    fontSize: (props) => (props.isMobile ? '60pt' : '96pt'),
     padding: '0px',
     margin: '0px',
     lineSpacing: '1',
     zIndex: '2',
+    marginBottom: '150px',
   },
 });
 
-const Start = ({ handleEnter }) => {
-  const classes = useStyles();
+const Start = ({ isMobile }) => {
+  console.log(isMobile);
+  const classes = useStyles({ isMobile: isMobile });
   return (
     <div className={classes.main}>
       <h1 className={classes.title}>
@@ -48,6 +52,7 @@ const Start = ({ handleEnter }) => {
           enter
         </Link>
       </button>
+      <StartClouds />
     </div>
   );
 };

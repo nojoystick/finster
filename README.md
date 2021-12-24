@@ -1,3 +1,12 @@
+![howard finster](https://github.com/nojoystick/finster/raw/master/assets/title.png)
+
+fan site for a kindred spirit
+
+![poem](https://github.com/nojoystick/finster/raw/master/assets/poem.png)
+_from Howard Finster #3740_
+
+the Finster font is based on glyphs from paintings [#2870](https://s3.amazonaws.com/files.collageplatform.com.prod/image_cache/1010x580_fit/556c97a207a72cb668fb19fd/fff6387e82ebb245c05a5f376f821300.jpeg), [#15371](https://www.antonhaardtgallery.com/products/howard-finster-15), [#3740](https://www.hammergallery.com/files-collageplatform-com-prod/image_cache/236x236_fit/556c97a207a72cb668fb19fd/b4f7ae075cb47b16c5423374ca028efb.jpeg), and [#2061](<https://img.discogs.com/whcxPcIvGygwg2uFJUCQ9qGLjMc=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-8811530-1621657630-9095.jpeg.jpg>). if you want to use it you can download the .ttf from the assets folder of this repository.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -34,7 +34,7 @@ const useNavbarStyles = makeStyles({
   },
 });
 
-export default function Navbar() {
+export default function Navbar({ isMobile }) {
   const location = useLocation();
   const [isOnHome, setIsOnHome] = useState(location.pathname === Routes.HOME);
   const [isOnOtherWorlds, setIsOnOtherWorlds] = useState(
@@ -67,9 +67,19 @@ export default function Navbar() {
         )}
       </header>
       <div id='body' className={classes.body}>
-        <Route exact path={Routes.HOME} component={Components.Start} />
-        <Route path={Routes.ABOUT} component={Components.About} />
-        <Route path={Routes.OTHER_WORLDS} component={Components.Art} />
+        <Route
+          exact
+          path={Routes.HOME}
+          render={() => <Components.Start isMobile={isMobile} />}
+        />
+        <Route
+          path={Routes.ABOUT}
+          render={() => <Components.About isMobile={isMobile} />}
+        />
+        <Route
+          path={Routes.OTHER_WORLDS}
+          render={() => <Components.Art isMobile={isMobile} />}
+        />
       </div>
     </>
   );

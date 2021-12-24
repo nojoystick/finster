@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import CanvasImg from '../assets/canvas.png';
 import { makeStyles } from '@material-ui/core';
 
@@ -14,7 +15,13 @@ const useStyles = makeStyles({
 
 const Canvas = () => {
   const classes = useStyles();
-  return <img className={classes.img} src={CanvasImg} alt={'frame'} />;
+  const maximizableElement = useRef(null);
+
+  return (
+    <div ref={maximizableElement}>
+      <img className={classes.img} src={CanvasImg} alt={'frame'} />;
+    </div>
+  );
 };
 
 export default Canvas;

@@ -1,8 +1,10 @@
 import { makeStyles } from '@material-ui/core';
+import { StartClouds } from '../components';
 
 const useStyles = makeStyles({
   main: {
-    padding: '0px 150px',
+    padding: (props) => (props.isMobile ? '0px 30px' : '0px 150px'),
+    marginTop: '40px',
     height: '100%',
     display: 'flex',
     alignItems: 'center',
@@ -15,8 +17,8 @@ const useStyles = makeStyles({
   },
 });
 
-const About = () => {
-  const classes = useStyles();
+const About = ({ isMobile }) => {
+  const classes = useStyles({ isMobile });
   return (
     <div className={classes.main}>
       <p className={classes.para}>
@@ -33,8 +35,19 @@ const About = () => {
         time won't wait dont miss heaven <br />
         <br />
         visions of other worlds by howard finster <br />
-        god bless two thousand and eight-hundred seventy
+        god bless two thousand and eight-hundred seventy <br />
+        <br />
+        visions of other worlds
+        <br />
+        nineteen eighty three
+        <br />
+        wood box with glass and paint
+        <br />
+        fifteen by thirteen by three and a half inches <br />
+        hf sixty-seven
+        <br />
       </p>
+      <StartClouds />
     </div>
   );
 };

@@ -63,11 +63,11 @@ function parseBoxShadows(boxShadows) {
 }
 
 const StartClouds = () => {
-  const [boxShadows, setBoxShadows] = useState(getBoxShadows(100));
+  const [boxShadows, setBoxShadows] = useState(getBoxShadows(50));
   const classes = useStyles({ boxShadow: parseBoxShadows(boxShadows) });
 
   const animateBoxShadow = () => {
-    const i = Math.round(Math.random() * 100);
+    const i = Math.round(Math.random() * 50);
     const bsCopy = boxShadows.slice();
     bsCopy[i].vw = bsCopy[i].vw === 100 ? 1 : bsCopy[i].vw + 1;
     bsCopy[i].vh = bsCopy[i].vh === 100 ? 1 : bsCopy[i].vh + 1;
@@ -81,6 +81,7 @@ const StartClouds = () => {
       clearInterval(sub);
       clearInterval(sub2);
     };
+    // eslint-disable-next-line
   }, []);
 
   return (

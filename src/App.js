@@ -1,30 +1,44 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { HashRouter } from 'react-router-dom';
-import { Navbar, StartClouds } from './components';
-import useFullscreenStatus from './utils/useFullscreen';
-import Colors from './assets/colors';
+import { Navbar } from './components';
 import { makeStyles } from '@material-ui/core';
+import useDimensions from './utils/useDimensions';
 
 const useStyles = makeStyles({
-  body: {
+  bodyStart: {
+    opacity: '0%',
+    transition: 'opacity 5s',
+  },
+  bodyEnd: {
     backgroundColor: 'transparent',
-    height: '100%',
     overflow: 'scroll',
+    opacity: '100%',
+    transition: 'opacity 2s',
   },
 });
 
 const App = () => {
-  const maximizableElement = useRef(null);
-  let [isFullscreen, setIsFullscreen] = useFullscreenStatus(maximizableElement);
+  const [show, setShow] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [width] = useDimensions();
   const classes = useStyles();
 
+  useEffect(() => {
+    setShow(true);
+  }, []);
+
+  useEffect(() => {
+    setIsMobile(width < 1000);
+  }, [width]);
+
   return (
-    <div className={classes.body} ref={maximizableElement}>
-      <HashRouter>
-        <Navbar />
-      </HashRouter>
-      <StartClouds />
-    </div>
+    <>
+      <div className={show ? classes.bodyEnd : classes.bodyStart}>
+        <HashRouter>
+          <Navbar isMobile={isMobile} />
+        </HashRouter>
+      </div>
+    </>
   );
 };
 
